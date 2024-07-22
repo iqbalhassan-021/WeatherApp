@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="shortcut icon" href="src/assets/sun.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Weatherly</title>
+</head>
+<body>
+    <div class="container">
+        <!-- NavBar -->
+        <div class="header">
+            <div class="cover">
+                <div class="navBar">
+                    <div class="navBar-tab">
+                        <img src="src/assets/sun.png" alt="site-logo" class="logo">
+                        <p class="vis">--</p>
+                        <a href="#" class="no-decoration">
+                            <p class="logo">Weatherly</p>
+                        </a>
+                    </div>
+                    <div class="navBar-tab navLinks">
+                        <p class="vis">---</p>
+                        <a href="#" class="no-decoration">
+                            <p>API Documentation</p>
+                        </a>
+                    </div>
+                    <p class="vis">---</p>
+                    <div class="navBar-tab navLinks">
+                        <a href="#" class="no-decoration">
+                            <p>Github Repo</p>
+                        </a>
+                    </div>
+                    <p class="vis">-=-</p>
+                    <div class="navBar-tab navLinks">
+                        <a href="#" class="no-decoration">
+                            <p>Let's Connect</p>
+                        </a>
+                    </div>
+                    <div class="navBar-tab ham" onclick="hideMe()">
+                        <a class="no-decoration">
+                            <i class="fa-sharp fa-solid fa-bars hamburger"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-nav" id="mobilenav">
+                <div>
+                    <a href="#" class="no-decoration" onclick="imClicked()">
+                        <p>API</p>
+                    </a>
+                </div>
+                <p class="vis">-=-</p>
+                <div>
+                    <a href="#" class="no-decoration" onclick="imClicked()">
+                        <p>Documentation</p>
+                    </a>
+                </div>
+                <p class="vis">-=-</p>
+                <div>
+                    <a href="#" class="no-decoration" onclick="imClicked()">
+                        <p>Let's Connect</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- NavBar Ends -->
+
+        <!-- Main Body -->
+        <div class="main-body">
+            <div class="cover">
+                <div class="weather-holder">
+                    <div class="the-main">
+                        <div class="weather-data">
+                            <div class="location-setter">
+                                <p>Your Location :</p>
+                                <select name="location" id="location" class="locations">
+                                    <option value="Lahore">Lahore</option>
+                                    <option value="Islamabad">Islamabad</option>
+                                    <option value="Karachi">Karachi</option>
+                                </select>
+                                
+                            </div>
+                            <div class="today">
+                                <div class="date">
+                                    <p id="current-date"></p>
+                                </div>
+                                <div class="todays-weather">
+                                    <div class="weather">
+                                        <img src="src/assets/sun.png" alt="Weather now" id="weather-icon">
+                                        <p class="big-text" id="temperature">
+                                           
+                                        </p>
+                                    </div>
+                                    <div class="condition">
+                                        <p id="condition"></p>
+                                    </div>
+                                    <div class="what-now">
+                                        <div class="humidity">
+                                            <p>Humidity</p>
+                                            <p class="title" id="humidity"></p>
+                                        </div>
+                                        <div class="wind-speed">
+                                            <p>Wind Speed</p>
+                                            <p class="title" id="wind-speed"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="more-data">
+                            <div class="theweather-chart">
+                                <canvas id="weatherChart"></canvas>
+                            </div>
+                            <div class="the-next" id="next-weather">
+                                <div class="card">
+                                    <p>Day 1</p>
+                                    <br>
+                                    <img src="src/assets/cloudy.png" alt="weather">
+                                    <p>Temperature<br><strong id="temp-day-1">-</strong></p>
+                                </div>
+                                <div class="card">
+                                    <p>Day 2</p>
+                                    <br>
+                                    <img src="src/assets/crescent-moon.png" alt="weather">
+                                    <p>Temperature<br><strong id="temp-day-2">-</strong></p>
+                                </div>
+                                <div class="card">
+                                    <p>Day 3</p>
+                                    <br>
+                                    <img src="src/assets/moon.png" alt="weather">
+                                    <p>Temperature<br><strong id="temp-day-3">-</strong></p>
+                                </div>
+                                <div class="card">
+                                    <p>Day 4</p>
+                                    <br>
+                                    <img src="src/assets/rain-drops.png" alt="weather">
+                                    <p>Temperature<br><strong id="temp-day-4">-</strong></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Body Ends -->
+
+        <footer>
+            <div class="footer sticky-bottom">
+                <p>@Copyright reserved <p class="vis">---</p><a href="#" class="no-decoration">@IQBAL HASSAN</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        let weatherChart; // Global variable for Chart.js instance
+
+        async function fetchWeather(location = 'Lahore') {
+            try {
+                const response = await fetch(`http://localhost:3000/api/weather/${location}`);
+                const data = await response.json();
+
+                // Update the DOM with the weather data
+                document.getElementById('current-date').innerText = new Date().toLocaleString();
+                document.getElementById('temperature').innerHTML = `${data.temperature.low}<sup>°C</sup>`;
+                document.getElementById('condition').innerText = data.conditions;
+                document.getElementById('humidity').innerText = `${data.humidity}%`;
+                document.getElementById('wind-speed').innerText = `${data.windSpeed} km/h`;
+
+                // Update the weather icon
+                const iconElement = document.getElementById('weather-icon');
+                if (data.conditions.toLowerCase().includes('cloud')) {
+                    iconElement.src = 'src/assets/cloudy.png';
+                } else if (data.conditions.toLowerCase().includes('sun')) {
+                    iconElement.src = 'src/assets/sun.png';
+                } else {
+                    iconElement.src = 'src/assets/sun.png'; // default icon
+                }
+
+                // Predict and display the next 4 days temperature
+                const lowTemp = data.temperature.low;
+                const predictedTemps = predictNext4Days(lowTemp);
+                updateNextWeather(predictedTemps);
+
+                // Initialize or update Chart.js
+                initChart(predictedTemps);
+            } catch (error) {
+                console.error('Error fetching weather data:', error);
+            }
+        }
+
+        function predictNext4Days(currentTemp) {
+            const predictedTemps = [];
+            const tempChange = Math.random() * 4 - 2; // Random temperature change between -2 and 2
+
+            for (let i = 1; i <= 4; i++) {
+                currentTemp += tempChange;
+                predictedTemps.push(Math.round(currentTemp * 10) / 10); // Round to one decimal place
+            }
+
+            return predictedTemps; // Return the predicted temperatures
+        }
+
+        function updateNextWeather(predictedTemps) {
+            for (let i = 1; i <= 4; i++) {
+                document.getElementById(`temp-day-${i}`).innerText = `${predictedTemps[i - 1]}°C`;
+            }
+        }
+
+        function initChart(predictedTemps) {
+            const ctx = document.getElementById('weatherChart').getContext('2d');
+
+            if (weatherChart) {
+                weatherChart.destroy(); // Destroy the existing chart instance if it exists
+            }
+
+            weatherChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4'],
+                    datasets: [{
+                        label: 'Temperature Scale',
+                        data: predictedTemps, // Use updated data here
+                        borderColor: 'rgb(75, 192, 192)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        fill: true,
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            beginAtZero: true
+                        },
+                        y: {
+                            beginAtZero: false,
+                            title: {
+                                display: true,
+                                text: 'Temperature (°C)'
+                            },
+                            ticks: {
+                                stepSize: 1 // Adjust step size as needed
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        document.getElementById('location').addEventListener('change', (event) => {
+            fetchWeather(event.target.value);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => fetchWeather());
+    </script>
+
+    <script>
+        let mobilenav = document.getElementById('mobilenav');
+
+        function hideMe() {
+            if (mobilenav.style.display === 'flex') {
+                mobilenav.style.display = 'none';
+            } else {
+                mobilenav.style.display = 'flex';
+            }
+        }
+
+        function imClicked() {
+            mobilenav.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

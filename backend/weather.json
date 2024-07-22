@@ -1,0 +1,35 @@
+{
+  "karachi": {
+    "date": "2024-07-22",
+    "location": "Karachi",
+    "temperature": {
+      "high": 36,
+      "low": 32
+    },
+    "conditions": "Partly Cloudy",
+    "humidity": 68,
+    "windSpeed": 18
+  },
+  "lahore": {
+    "date": "2024-07-22",
+    "location": "Lahore",
+    "temperature": {
+      "high": 39.8,
+      "low": 35.8
+    },
+    "conditions": "Partly Cloudy",
+    "humidity": 68,
+    "windSpeed": 4.2
+  },
+  "islamabad": {
+    "date": "2024-07-22",
+    "location": "Islamabad",
+    "temperature": {
+      "high": 39.7,
+      "low": 35.7
+    },
+    "conditions": "Partly Cloudy",
+    "humidity": 68,
+    "windSpeed": 6.4
+  }
+}
