@@ -7,18 +7,17 @@ To get started with this project, you need to have Node.js installed. Then, foll
 
 Clone the repository:
 
-sh
-Copy code
+
+
 git clone <repository-url>
 Navigate to the project directory:
 
-sh
-Copy code
+
+
 cd <project-directory>
 Install the dependencies:
 
-sh
-Copy code
+
 npm install
 Dependencies
 The project uses the following npm packages:
@@ -29,10 +28,11 @@ fs: The file system module, used here with promises to handle file operations as
 cors: A middleware for enabling CORS (Cross-Origin Resource Sharing) with various options.
 Install these packages using the following command:
 
-sh
-Copy code
+
 npm install express axios fs cors
+
 API Endpoints
+
 1. Root Endpoint
 URL: /
 Method: GET
@@ -54,8 +54,7 @@ URL: /api/weather
 Method: GET
 Description: Fetches and returns weather data for predefined cities (Karachi, Lahore, Islamabad).
 Response: JSON object containing weather data for the cities.
-json
-Copy code
+
 {
     "karachi": { ...weather data... },
     "lahore": { ...weather data... },
@@ -68,8 +67,7 @@ Description: Fetches and returns weather data for a specific city.
 Parameters:
 location (string): The name of the city (e.g., karachi, lahore, islamabad).
 Response: JSON object containing weather data for the specified city.
-json
-Copy code
+
 {
     "date": "2024-07-23",
     "location": "Lahore",
@@ -81,8 +79,7 @@ Copy code
 Usage
 To run the server, use the following command:
 
-sh
-Copy code
+
 node index.js
 The server will start on http://localhost:3000.
 
@@ -94,8 +91,7 @@ The frontend provides a dropdown to select a city and displays the current weath
 Running the Project
 Start the server:
 
-sh
-Copy code
+
 node index.js
 Open index.html in your browser to interact with the frontend.
 
