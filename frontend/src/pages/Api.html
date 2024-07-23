@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../assets/sun.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Weatherly</title>
+</head>
+<body>
+    <div class="container">
+        <!-- NavBar -->
+        <div class="header">
+            <div class="cover">
+                <div class="navBar">
+                    <div class="navBar-tab">
+                        <img src="../assets/sun.png" alt="site-logo" class="logo">
+                        <p class="vis">--</p>
+                        <a href="/frontend/index.html" class="no-decoration">
+                            <p class="logo">Weatherly</p>
+                        </a>
+                    </div>
+                    <div class="navBar-tab navLinks">
+                        <p class="vis">---</p>
+                        <a href="#" class="no-decoration">
+                            <p>API Documentation</p>
+                        </a>
+                    </div>
+                    <p class="vis">---</p>
+                    <div class="navBar-tab navLinks">
+                        <a href="https://github.com/iqbalhassan-021/WeatherApp.git" class="no-decoration">
+                            <p>Github Repo</p>
+                        </a>
+                    </div>
+                    <p class="vis">-=-</p>
+                    <div class="navBar-tab navLinks">
+                        <a href="https://hassansbio.netlify.app/" class="no-decoration">
+                            <p>Let's Connect</p>
+                        </a>
+                    </div>
+                    <div class="navBar-tab ham" onclick="hideMe()">
+                        <a class="no-decoration">
+                            <i class="fa-sharp fa-solid fa-bars hamburger"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-nav" id="mobilenav">
+                <div>
+                    <a href="#" class="no-decoration" onclick="imClicked()">
+                        <p>API</p>
+                    </a>
+                </div>
+                <p class="vis">-=-</p>
+                <div>
+                    <a href="#" class="no-decoration" onclick="imClicked()">
+                        <p>Documentation</p>
+                    </a>
+                </div>
+                <p class="vis">-=-</p>
+                <div>
+                    <a href="#" class="no-decoration" onclick="imClicked()">
+                        <p>Let's Connect</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- NavBar Ends -->
+
+        <!-- Main Body -->
+        <div class="main-body">
+            <div class="cover">
+              <div class="the-api">
+                <div class="details">
+                    <p class="logo">
+                            Weatherly Documentation
+                    </p>
+                    <br>
+                    <p class="logo">
+                        Introduction
+                    </p>
+                    <p>
+                        This API allows you to retrieve and store weather data for various cities. It uses Express.js for the server framework, Axios for making HTTP requests to the weather API, and FS with promises for file operations. The API fetches weather data for predefined cities and serves it through various endpoints.
+
+                    </p>
+                    <br>
+                    <p class="logo">
+                        Installation
+                    </p>
+                    <p>
+                        To get started with this project, you need to have Node.js installed. Then, follow these steps:
+                    </p>
+
+                    <ol>
+                        <li>Clone the repository to your local machine.
+                            <br>
+                           <br>
+                           <div class="code">
+                                <div class="code-title">
+                                    <p>
+                                        sh
+                                    </p>
+                                </div>
+                                <div class="scrypt">
+                                    <p id="src">
+                                        git clone https://github.com/iqbalhassan-021/WeatherApp.git
+                                    </p>
+                                </div>
+                           </div>
+                        </li>
+                        <br>
+                        <li>Navigate to the project directory:
+                            <br>
+                           <br>
+                           <div class="code">
+                                <div class="code-title">
+                                    <p>
+                                        sh
+                                    </p>
+                                </div>
+                                <div class="scrypt">
+                                    <p id="src">
+                                        cd /WeatherApp/backend
+                                    </p>
+                                </div>
+                           </div>
+                        </li>
+                        <br>
+                        <li>Install the dependencies:.
+                            <br>
+                           <br>
+                           <div class="code">
+                                <div class="code-title">
+                                    <p>
+                                        sh
+                                    </p>
+                                </div>
+                                <div class="scrypt">
+                                    <p id="src">
+                                        npm install
+                                    </p>
+                                </div>
+                           </div>
+                        </li>
+                    </ol>
+                    <br>
+                    <p class="logo">
+                        Dependencies
+                    </p>
+                    <p>
+                        The project uses the following npm packages:
+                    </p>
+
+                    <p>
+                        <ul>
+                            <li>
+                                <u>express</u>: A minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+                            </li>
+                            <li>
+                               <u>axios</u> : A promise-based HTTP client for the browser and Node.js, used for making HTTP requests to fetch weather data.
+                            </li>
+                            <li>
+                               <u>fs</u> : The file system module, used here with promises to handle file operations asynchronously.
+                            </li>
+                            <li>
+                              <u>cors</u>  : A middleware for enabling CORS (Cross-Origin Resource Sharing) with various options.
+                            </li>
+
+                            <li>Install these packages using the following command:
+                                
+                                <br>
+                               <br>
+                               <div class="code">
+                                    <div class="code-title">
+                                        <p>
+                                            sh
+                                        </p>
+                                    </div>
+                                    <div class="scrypt">
+                                        <p id="src">
+                                            npm install express axios fs cors
+                                        </p>
+                                    </div>
+                               </div>
+                            </li>
+                        </ul>
+
+                    </p>
+                    <p class="logo">
+                        API Endpoints
+                    </p>
+                    <ol>
+                        <li>
+                            Root Endpoint
+                            <ul>
+                                <li>
+                                    URL: /
+                                </li>
+                                <li>
+                                    Method: GET
+                                </li>
+                                <li>
+                                    Description: Provides a welcome message and instructions to navigate to the weather endpoint.
+                                </li>
+                                <li>Response: Plain text message.
+                                
+                                    <br>
+                                   <br>
+                                   <div class="code">
+                                        <div class="code-title">
+                                            <p>
+                                                sh
+                                            </p>
+                                        </div>
+                                        <div class="scrypt">
+                                            <p id="src">
+                                                "To see the weather move to /api/weather"
+                                            </p>
+                                        </div>
+                                   </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            API Info Endpoint
+                            <ul>
+                                <li>
+                                    URL: /api
+                                </li>
+                                <li>
+                                    Method: GET
+                                </li>
+                                <li>
+                                    Description: Provides basic information about the API.
+                                </li>
+                                <li>Response: Plain text message.
+                                
+                                    <br>
+                                   <br>
+                                   <div class="code">
+                                        <div class="code-title">
+                                            <p>
+                                                sh
+                                            </p>
+                                        </div>
+                                        <div class="scrypt">
+                                            <p id="src">
+                                                "This is an API to get the weather details."
+                                            </p>
+                                        </div>
+                                   </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            API Info Endpoint
+                            <ul>
+                                <li>
+                                    URL: /api/weather
+                                </li>
+                                <li>
+                                    Method: GET
+                                </li>
+                                <li>
+                                    Description: Fetches and returns weather data for predefined cities (Karachi, Lahore, Islamabad).
+
+                                </li>
+                                <li>Response: JSON object containing weather data for the cities.
+
+                                
+                                    <br>
+                                   <br>
+                                   <div class="code">
+                                        <div class="code-title">
+                                            <p>
+                                                sh
+                                            </p>
+                                        </div>
+                                        <div class="scrypt">
+                                            <p id="src">
+                                                {
+                                                    <br>
+                                                    "karachi": { ...weather data... },<br>
+                                                    "lahore": { ...weather data... },<br>
+                                                    "islamabad": { ...weather data... }<br>
+                                                }
+                                                
+                                            </p>
+                                        </div>
+                                   </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            API Info Endpoint
+                            <ul>
+                                <li>
+                                    URL: /api/weather/:location
+                                </li>
+                                <li>
+                                    Method: GET
+                                </li>
+                                <li>
+                                    Description: Fetches and returns weather data for a specific city.
+
+                                </li>
+                                <li>Parameters:
+                                    location (string): The name of the city (e.g., karachi, lahore, islamabad).
+                                    
+
+                                
+                                    <br>
+                                   <br>
+                                   <div class="code">
+                                        <div class="code-title">
+                                            <p>
+                                                sh
+                                            </p>
+                                        </div>
+                                        <div class="scrypt">
+                                            <p id="src">
+                                                {
+                                                    <br>
+                                                    "date": "2024-07-23",<br>
+                                                    "location": "Lahore",<br>
+                                                    "temperature": { "high": 34, "low": 28 },<br>
+                                                    "conditions": "Partly Cloudy",<br>
+                                                    "humidity": 68,<br>
+                                                    "windSpeed": 15<br>
+                                                }
+                                                
+                                            </p>
+                                        </div>
+                                   </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <br>
+                    <p class="logo">
+                        Running the Project
+                    </p>
+                    <ol>
+                        <li>
+                            <p>
+                                Start the server
+                            </p>
+                            <br>
+                            <div class="code">
+                                <div class="code-title">
+                                    <p>
+                                        sh
+                                    </p>
+                                </div>
+                                
+                                <div class="scrypt">
+                                    <p id="src">
+
+                                        npm run start
+                                    </p>
+                                </div>
+                           </div>
+                        </li>
+                        <li>
+                            <p>
+                                 See the magic
+                            </p>
+                           
+                            <ul>
+                                <li>
+                                    Open the frondend folder
+                                </li>
+                                <li>
+                                    Open the index.html file in browser
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- Main Body Ends -->
+
+        <footer>
+            <div class="footer sticky-bottom">
+                <p>@Copyright reserved <p class="vis">---</p><a href="https://hassansbio.netlify.app/" class="no-decoration">@IQBAL HASSAN</a></p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        let mobilenav = document.getElementById('mobilenav');
+
+        function hideMe() {
+            if (mobilenav.style.display === 'flex') {
+                mobilenav.style.display = 'none';
+            } else {
+                mobilenav.style.display = 'flex';
+            }
+        }
+
+        function imClicked() {
+            mobilenav.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
